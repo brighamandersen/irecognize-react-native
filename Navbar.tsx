@@ -4,6 +4,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import COLORS from './colors';
 import { Link } from 'expo-router';
 
+const MENU_ITEM_SIZE = 30;
+
 const styles = StyleSheet.create({
   appBar: {
     backgroundColor: COLORS.surface,
@@ -19,12 +21,12 @@ const styles = StyleSheet.create({
     padding: 16
   },
   iText: {
-    fontSize: 30,
+    fontSize: MENU_ITEM_SIZE,
     fontWeight: 'bold',
     color: COLORS.accent
   },
   recognizeText: {
-    fontSize: 30,
+    fontSize: MENU_ITEM_SIZE,
     fontWeight: 'bold',
     color: COLORS.primary
   },
@@ -45,10 +47,18 @@ const Navbar: FC = () => (
       </Link>
     </View>
     <Link href='/search' style={styles.searchWrapper}>
-      <MaterialIcons name='search' size={24} color={COLORS.primary} />
+      <MaterialIcons
+        name='search'
+        size={MENU_ITEM_SIZE}
+        color={COLORS.primary}
+      />
     </Link>
     <Link href='/profile' style={styles.myProfileWrapper}>
-      <MaterialIcons name='account-circle' size={24} color={COLORS.primary} />
+      <MaterialIcons
+        name='account-circle'
+        size={MENU_ITEM_SIZE}
+        color={COLORS.primary}
+      />
     </Link>
   </View>
 );
