@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import COLORS from './colors';
+import { Link } from 'expo-router';
 
 const styles = StyleSheet.create({
   appBar: {
@@ -35,21 +36,21 @@ const styles = StyleSheet.create({
   }
 });
 
-const Navbar = () => {
-  return (
-    <View style={styles.appBar}>
-      <View style={styles.appNameContainer}>
+const Navbar: FC = () => (
+  <View style={styles.appBar}>
+    <View style={styles.appNameContainer}>
+      <Link href='/'>
         <Text style={styles.iText}>i</Text>
         <Text style={styles.recognizeText}>Recognize</Text>
-      </View>
-      <TouchableOpacity style={styles.searchWrapper}>
-        <MaterialIcons name='search' size={24} color={COLORS.primary} />
-      </TouchableOpacity>
-      <View style={styles.myProfileWrapper}>
-        <MaterialIcons name='account-circle' size={24} color={COLORS.primary} />
-      </View>
+      </Link>
     </View>
-  );
-};
+    <Link href='/search' style={styles.searchWrapper}>
+      <MaterialIcons name='search' size={24} color={COLORS.primary} />
+    </Link>
+    <Link href='/profile' style={styles.myProfileWrapper}>
+      <MaterialIcons name='account-circle' size={24} color={COLORS.primary} />
+    </Link>
+  </View>
+);
 
 export default Navbar;

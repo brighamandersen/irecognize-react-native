@@ -1,7 +1,10 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import React, { FC } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Navbar from '../Navbar';
+import COLORS from '../colors';
 import { StatusBar } from 'expo-status-bar';
-import Navbar from './Navbar';
-import COLORS from './colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Slot } from 'expo-router';
 
 const styles = StyleSheet.create({
   safeAreaView: {
@@ -16,16 +19,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const App = () => (
+const Layout: FC = () => (
   <>
     <StatusBar backgroundColor={COLORS.primary} />
     <SafeAreaView style={styles.safeAreaView}>
       <Navbar />
       <View style={styles.content}>
-        <Text>Content</Text>
+        <Slot />
       </View>
     </SafeAreaView>
   </>
 );
 
-export default App;
+export default Layout;
