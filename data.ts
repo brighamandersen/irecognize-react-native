@@ -182,9 +182,10 @@ export const MY_TALKED_TO_RECENTLY = [
 ];
 
 
-const BYU_FRIENDS_NETWORK = [
+export const BYU_FRIENDS_NETWORK = [
   // Network of friends
   // Use getMyFriends() in helpers to get list from perspective of a certain person
+  PERSON_CURRENT_USER,
   PERSON_ALEXA_URREA,
   PERSON_SAM_BENNION,
   PERSON_HARRISON_BURGESS,
@@ -194,7 +195,8 @@ const BYU_FRIENDS_NETWORK = [
   PERSON_TRACE_HALE
 ];
 
-const FRIENDS_FROM_HOME_NETWORK = [
+export const FRIENDS_FROM_HOME_NETWORK = [
+  PERSON_CURRENT_USER,
   PERSON_CODY_KNECHT,
   PERSON_ISAAC_PETTIT,
   PERSON_CADEN_KIRBY,
