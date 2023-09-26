@@ -1,6 +1,14 @@
-import { FC } from 'react';
-import { Text } from 'react-native';
+import { FC, Fragment } from 'react';
+import { Text, View } from 'react-native';
+import Navbar from '../Navbar';
 
-const Search: FC = () => <Text>Search</Text>;
+const Search: FC = () => (
+  <Fragment>
+    <Navbar shouldShowBackButton />
+    <View>
+      <Text>Search</Text>
+    </View>
+  </Fragment>
+);
 
 export default Search;

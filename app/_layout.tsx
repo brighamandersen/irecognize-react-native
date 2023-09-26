@@ -21,10 +21,10 @@ const Layout: FC = () => (
   <>
     <StatusBar backgroundColor={COLORS.primary} />
     <SafeAreaView style={styles.safeAreaView}>
-      <Navbar />
-      <View style={styles.content}>
-        <Slot />
-      </View>
+      {/* <Navbar /> */}
+      {/* <View style={styles.content}> */}
+      <Slot />
+      {/* </View> */}
     </SafeAreaView>
   </>
 );

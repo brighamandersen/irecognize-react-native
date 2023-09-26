@@ -35,11 +35,27 @@ const styles = StyleSheet.create({
   },
   myProfileWrapper: {
     padding: 16
+  },
+  backWrapper: {
+    paddingLeft: 16
   }
 });
 
-const Navbar: FC = () => (
+interface Props {
+  shouldShowBackButton?: boolean;
+}
+
+const Navbar: FC<Props> = ({ shouldShowBackButton }) => (
   <View style={styles.appBar}>
+    {shouldShowBackButton && (
+      <Link href='/' style={styles.backWrapper}>
+        <MaterialIcons
+          name='arrow-back'
+          size={MENU_ITEM_SIZE}
+          color={COLORS.primary}
+        />
+      </Link>
+    )}
     <View style={styles.appNameContainer}>
       <Link href='/'>
         <Text style={styles.iText}>i</Text>
