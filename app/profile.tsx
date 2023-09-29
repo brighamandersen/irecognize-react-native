@@ -7,6 +7,7 @@ import { getFriendsOfPerson, getPersonById } from '../utils';
 import COLORS from '../colors';
 import PersonList from '../components/PersonList';
 import ProfilePersonBar from '../components/ProfilePersonBar';
+import ProfileTabBar from '../components/ProfileTabBar';
 
 const Profile: FC = () => {
   const local = useLocalSearchParams();
@@ -20,6 +21,7 @@ const Profile: FC = () => {
       <Navbar shouldShowBackButton={!isOwnProfile} />
       <View>
         <ProfilePersonBar person={person} />
+        <ProfileTabBar />
         <ScrollView>
           <Text style={{ fontSize: 16, color: COLORS.primary }}>
             {isOwnProfile ? 'My Friends' : `${person.name}'s Friends`}

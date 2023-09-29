@@ -37,7 +37,7 @@ const SearchBar: FC<Props> = ({ searchQuery, setSearchQuery }) => (
     <TextInput
       numberOfLines={1}
       onChangeText={setSearchQuery}
-      placeholder='Search for person...'
+      placeholder='Search by person name...'
       style={styles.searchInput}
       value={searchQuery}
     />

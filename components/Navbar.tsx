@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
   recognizeText: {
     fontSize: MENU_ITEM_SIZE,
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: COLORS.primary
   },
   searchWrapper: {
