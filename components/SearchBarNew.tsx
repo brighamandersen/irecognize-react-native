@@ -2,12 +2,11 @@ import React, { FC } from 'react';
 import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import COLORS from '../colors';
-import { router } from 'expo-router';
 import { MENU_ITEM_SIZE } from '../constants';
 import BackButton from './BackButton';
 
 const styles = StyleSheet.create({
-  searchbar: {
+  searchBar: {
     backgroundColor: COLORS.surface,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -32,8 +31,8 @@ interface Props {
   setSearchQuery: (searchQuery: string) => void;
 }
 
-const Searchbar: FC<Props> = ({ searchQuery, setSearchQuery }) => (
-  <View style={styles.searchbar}>
+const SearchBar: FC<Props> = ({ searchQuery, setSearchQuery }) => (
+  <View style={styles.searchBar}>
     <BackButton />
     <TextInput
       numberOfLines={1}
@@ -52,4 +51,4 @@ const Searchbar: FC<Props> = ({ searchQuery, setSearchQuery }) => (
   </View>
 );
 
-export default Searchbar;
+export default SearchBar;
