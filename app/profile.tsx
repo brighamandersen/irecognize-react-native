@@ -2,9 +2,10 @@ import { Link, useLocalSearchParams } from 'expo-router';
 import { FC, Fragment } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { PERSON_CURRENT_USER } from '../data';
-import Navbar from '../Navbar';
+import Navbar from '../components/Navbar';
 import { getFriendsOfPerson, getPersonById } from '../utils';
 import COLORS from '../colors';
+import PersonList from '../components/PersonList';
 
 const styles = StyleSheet.create({
   personContainer: {
@@ -32,15 +33,7 @@ const Profile: FC = () => {
             {isOwnProfile ? 'My Friends' : `${person.name}'s Friends`}
           </Text>
           {friendsOfPerson.length === 0 && <Text>N/A</Text>}
-          {friendsOfPerson.map((person) => (
-            <Link
-              href={`/profile?personId=${person.id}`}
-              key={person.id}
-              style={styles.personContainer}
-            >
-              <Text>{person.name}</Text>
-            </Link>
-          ))}
+          <PersonList persons={friendsOfPerson} />
         </ScrollView>
       </View>
     </Fragment>

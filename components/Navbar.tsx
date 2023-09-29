@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import COLORS from './colors';
+import COLORS from '../colors';
 import { Link } from 'expo-router';
 
 const MENU_ITEM_SIZE = 30;

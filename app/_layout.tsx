@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Navbar from '../Navbar';
+import Navbar from '../components/Navbar';
 import COLORS from '../colors';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -21,10 +21,7 @@ const Layout: FC = () => (
   <>
     <StatusBar backgroundColor={COLORS.primary} />
     <SafeAreaView style={styles.safeAreaView}>
-      {/* <Navbar /> */}
-      {/* <View style={styles.content}> */}
       <Slot />
-      {/* </View> */}
     </SafeAreaView>
   </>
 );
