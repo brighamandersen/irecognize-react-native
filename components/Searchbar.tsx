@@ -1,17 +1,10 @@
 import React, { FC } from 'react';
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import COLORS from '../colors';
-import { Link } from 'expo-router';
-
-const MENU_ITEM_SIZE = 30;
+import { router } from 'expo-router';
+import { MENU_ITEM_SIZE } from '../constants';
+import BackButton from './BackButton';
 
 const styles = StyleSheet.create({
   searchbar: {
@@ -25,14 +18,11 @@ const styles = StyleSheet.create({
   closeWrapper: {
     padding: 16
   },
-  backWrapper: {
-    paddingLeft: 16
-  },
   searchInput: {
     flex: 1,
     height: '100%',
-    padding: 16,
-    fontSize: 20,
+    padding: 20,
+    fontSize: 24,
     fontWeight: '500'
   }
 });
@@ -44,13 +34,7 @@ interface Props {
 
 const Searchbar: FC<Props> = ({ searchQuery, setSearchQuery }) => (
   <View style={styles.searchbar}>
-    <Link href='/' style={styles.backWrapper}>
-      <MaterialIcons
-        name='arrow-back'
-        size={MENU_ITEM_SIZE}
-        color={COLORS.primary}
-      />
-    </Link>
+    <BackButton />
     <TextInput
       numberOfLines={1}
       onChangeText={setSearchQuery}

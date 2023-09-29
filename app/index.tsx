@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 
 const Index: FC = () => (
   <Fragment>
-    <Navbar />
+    <Navbar shouldShowBottomBorder />
     <View>
       <Text style={styles.header}>People Near Me</Text>
       <PersonList persons={PEOPLE_NEAR_ME} />

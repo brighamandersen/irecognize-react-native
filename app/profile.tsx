@@ -22,7 +22,7 @@ const Profile: FC = () => {
 
   return (
     <Fragment>
-      <Navbar shouldShowBackButton={!isOwnProfile} />
+      <Navbar shouldShowBackButton={!isOwnProfile} shouldShowBottomBorder />
       <View>
         <Text style={{ fontSize: 24, color: COLORS.primary }}>
           {person.name}

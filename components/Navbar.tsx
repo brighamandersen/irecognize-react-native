@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import COLORS from '../colors';
 import { Link } from 'expo-router';
-
-const MENU_ITEM_SIZE = 30;
+import { MENU_ITEM_SIZE } from '../constants';
+import BackButton from './BackButton';
 
 const styles = StyleSheet.create({
   appBar: {
@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomColor: COLORS.textColor,
-    borderBottomWidth: 1
+    borderBottomColor: COLORS.textColor
   },
   appNameContainer: {
     flexDirection: 'row',
@@ -35,27 +34,25 @@ const styles = StyleSheet.create({
   },
   myProfileWrapper: {
     padding: 16
-  },
-  backWrapper: {
-    paddingLeft: 16
   }
 });
 
 interface Props {
   shouldShowBackButton?: boolean;
+  shouldShowBottomBorder?: boolean;
 }
 
-const Navbar: FC<Props> = ({ shouldShowBackButton }) => (
-  <View style={styles.appBar}>
-    {shouldShowBackButton && (
-      <Link href='/' style={styles.backWrapper}>
-        <MaterialIcons
-          name='arrow-back'
-          size={MENU_ITEM_SIZE}
-          color={COLORS.primary}
-        />
-      </Link>
-    )}
+const Navbar: FC<Props> = ({
+  shouldShowBackButton,
+  shouldShowBottomBorder
+}) => (
+  <View
+    style={{
+      ...styles.appBar,
+      borderBottomWidth: shouldShowBottomBorder ? 1 : 0
+    }}
+  >
+    {shouldShowBackButton && <BackButton />}
     <View style={styles.appNameContainer}>
       <Link href='/'>
         <Text style={styles.iText}>i</Text>
