@@ -20,15 +20,23 @@ const Profile: FC = () => {
     <Fragment>
       <Navbar shouldShowBackButton={!isOwnProfile} />
       <View>
-        <ProfilePersonBar person={person} />
-        <ProfileTabBar />
-        <ScrollView>
-          <Text style={{ fontSize: 16, color: COLORS.primary }}>
-            {isOwnProfile ? 'My Friends' : `${person.name}'s Friends`}
-          </Text>
-          {friendsOfPerson.length === 0 && <Text>N/A</Text>}
-          <PersonList persons={friendsOfPerson} />
-        </ScrollView>
+        <ProfilePersonBar
+          person={person}
+          shouldShowBottomBorder={isOwnProfile}
+        />
+        {isOwnProfile ? (
+          <ScrollView>
+            <Text style={{ fontSize: 16, color: COLORS.primary }}>
+              {'My Friends'}
+            </Text>
+            {friendsOfPerson.length === 0 && <Text>N/A</Text>}
+            <PersonList persons={friendsOfPerson} />
+          </ScrollView>
+        ) : (
+          <Fragment>
+            <ProfileTabBar />
+          </Fragment>
+        )}
       </View>
     </Fragment>
   );
