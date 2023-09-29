@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import { ALL_PEOPLE } from '../data';
 import PersonList from '../components/PersonList';
-import SearchBar from '../components/SearchBarNew';
+import SearchBar from '../components/SearchBar';
 
 const Search: FC = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
