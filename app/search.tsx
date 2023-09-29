@@ -7,7 +7,7 @@ const Search: FC = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const matchingPersons = ALL_PEOPLE.filter((person) =>
-    person.name.includes(searchQuery)
+    person.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
