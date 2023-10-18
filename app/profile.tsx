@@ -27,7 +27,7 @@ const Profile: FC = () => {
         {isOwnProfile ? (
           <ScrollView>
             <Text style={{ fontSize: 16, color: COLORS.primary }}>
-              {'My Friends'}
+              My Friends
             </Text>
             {friendsOfPerson.length === 0 && <Text>N/A</Text>}
             <PersonList persons={friendsOfPerson} />
